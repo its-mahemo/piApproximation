@@ -13,8 +13,9 @@ public class piApproximation {
     }
 
 
+    // Algorithm
     public static double approximatePi(double numIterations) {
-        double insideQuarterCircle = 0;
+        double pointsInsideQuarterCircle = 0; // Simple counter
 
         for (int i = 0; i < numIterations; i++) {
             double x = Math.random(); // Returns a random number between 0 and 1
@@ -22,9 +23,9 @@ public class piApproximation {
 
             // Case if point lied within the quarter circle
             if ( x * x + y * y <= 1.0) {  // True due to Pythagorean theorem
-                insideQuarterCircle++;
+                pointsInsideQuarterCircle++;
             }
         }
-        return 4.0 * (insideQuarterCircle/numIterations); // Need to multiply times four as we are using a quarter circle
+        return 4.0 * (pointsInsideQuarterCircle/numIterations); // Need to multiply times four as we are using a quarter circle
     }
 }
