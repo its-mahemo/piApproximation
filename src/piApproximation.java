@@ -13,17 +13,18 @@ public class piApproximation {
     }
 
 
-    public static double approximatePi(double numRuns) {
+    public static double approximatePi(double numIterations) {
         double insideQuarterCircle = 0;
 
-        for (int i = 0; i < numRuns; i++) {
-            double x = Math.random(); // returns a random number between 0 and 1
+        for (int i = 0; i < numIterations; i++) {
+            double x = Math.random(); // Returns a random number between 0 and 1
             double y = Math.random();
 
-            if( x * x + y * y <= 1.0) {  // True due to Pythagorean theorem
+            // Case if point lied within the quarter circle
+            if ( x * x + y * y <= 1.0) {  // True due to Pythagorean theorem
                 insideQuarterCircle++;
             }
         }
-        return 4.0 * (insideQuarterCircle/numRuns); // Need to multiply x4 as we are using a quarter circle
+        return 4.0 * (insideQuarterCircle/numIterations); // Need to multiply times four as we are using a quarter circle
     }
 }
