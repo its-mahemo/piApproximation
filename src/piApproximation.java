@@ -18,10 +18,11 @@ public class piApproximation {
         double pointsInsideQuarterCircle = 0; // Simple counter
 
         for (int i = 0; i < numIterations; i++) {
+            // Create random point
             double x = Math.random(); // Returns a random number between 0 and 1
             double y = Math.random();
 
-            // Case if point lied within the quarter circle
+            // Case if point lies within the quarter circle
             if ( x * x + y * y <= 1.0) {  // True due to Pythagorean theorem
                 pointsInsideQuarterCircle++;
             }
